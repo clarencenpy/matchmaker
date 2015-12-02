@@ -1,7 +1,7 @@
 .view {
     width: 100%;
 }
-.left {
+.left-panel {
     width: 25em;
     position: absolute;
     left: 0;
@@ -9,11 +9,12 @@
     background-color: darkred;
     padding: 1em;
 }
-.right {
+.right-panel {
     width: 100%;
     padding: 1em 1em 1em 26em;
     height: 100vh;
     background-color: dodgerblue;
+    overflow-y: scroll;
 }
 @media only screen and (max-width: 768px) {
     .left {

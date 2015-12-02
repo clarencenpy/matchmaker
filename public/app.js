@@ -42,11 +42,33 @@ var App = {
     loadPeople: function () {
         var $peopleList = $('#people-list');
         Data.people.forEach(function (p) {
-            var html = '<div class="column green">';
-            html += p.name;
-            html += '</div>';
+            var template = '<div class="column">\
+            <div class="ui fluid card">\
+                <div class="image">\
+                <img src="{{image}}">\
+                </div>\
+                <div class="content">\
+                <div class="header">{{name}}</div>\
+            <div class="meta">\
+                <a>Friends</a>\
+                </div>\
+                <div class="description">\
+                Matthew is an interior designer living in New York.\
+            </div>\
+            </div>\
+            <div class="extra content">\
+                <span class="right floated">\
+                Joined in 2013\
+                </span>\
+                <span>\
+                <i class="user icon"></i>\
+                75 Friends\
+            </span>\
+            </div>\
+            </div>\
+            </div>';
 
-            $peopleList.append(html);
+            $peopleList.append(Mustache.render(template,p));
         })
     }
 };

@@ -7,12 +7,13 @@
     <link rel="stylesheet" type="text/css" href="lib/semantic.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="lib/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.js"></script>
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
 
 <div class="view">
-    <div class="left">
+    <div class="left-panel">
         <!--Profile-->
         <div class="ui fluid centered card" style="max-width: 25em;">
             <div class="content">
@@ -37,9 +38,8 @@
             </div>
         </div>
     </div>
-    <div class="right">
-        <div id="people-list" class="ui three column stackable grid" style="margin: 0">
-
+    <div class="right-panel">
+        <div id="people-list" class="ui four column grid">
         </div>
     </div>
 </div>
