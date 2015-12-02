@@ -2,3 +2,30 @@
     margin: 0 !important;
     height: 100vh;
 }
+.view {
+    width: 100%;
+}
+.left {
+    width: 25em;
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    background-color: darkred;
+    padding: 1em;
+}
+.right {
+    width: 100%;
+    padding-left: 25em;
+    height: 100vh;
+    background-color: dodgerblue;
+}
+@media only screen and (max-width: 768px) {
+    .left {
+        width: 100%;
+        position: relative;
+        height: 25em;
+    }
+    .right {
+        margin-right: 0;
+    }
+}
