@@ -11,9 +11,9 @@
 }
 .right-panel {
     width: 100%;
-    padding: 1em 1em 1em 26em;
+    padding: 2em 2em 2em 27em;
     height: 100vh;
-    background-color: dodgerblue;
+    background-color: lightpink;
     overflow-y: scroll;
 }
 @media only screen and (max-width: 768px) {
@@ -23,6 +23,12 @@
         height: 40em;
     }
     .right {
-        padding: 1em;
+        padding: 2em;
     }
+}
+.square-crop {
+    object-fit: cover;
+    object-position: 90%;
+    height: 15em !important;
+    width: 15em !important;
 }

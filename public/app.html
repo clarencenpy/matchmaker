@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="image">
-                <img src="/images/avatar.jpg">
+                <img src="images/avatar.jpg">
             </div>
             <div class="extra content">
                 <div class="ui two buttons">
@@ -39,7 +39,43 @@
         </div>
     </div>
     <div class="right-panel">
-        <div id="people-list" class="ui four column grid">
+        <div id="people-list" class="ui special cards">
+            <script id="people-list-template" type="template">
+                <div class="ui card" style="max-width: 15em">
+                    <div class="extra content">
+                        <div class="header">{{name}}</div>
+                        <div class="meta">
+                            <i class="{{sex}} icon {{status}}"></i> {{displayMessage}}
+                        </div>
+                    </div>
+                    <div class="blurring dimmable image">
+                        <div class="ui inverted dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui button blue" style="margin-bottom: 1em">Check compatibility</div>
+                                    <div class="ui button pink">Send Gift</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="square-crop" src="{{image}}">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <div class="ui celled horizontal list center aligned">
+                                {{#interests}}
+                                <div class="item"><a>{{.}}</a></div>
+                                {{/interests}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra content center aligned">
+                        <span>
+                            <i class="user icon"></i>
+                            {{views}} views
+                        </span>
+                    </div>
+                </div>
+            </script>
         </div>
     </div>
 </div>

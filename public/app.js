@@ -3,11 +3,12 @@ var Data = {
         {
             name: "Ivy",
             age: 21,
-            sex: "F",
-            status: "Single",
+            sex: "female",
+            status: "green",
+            displayMessage: "I like hot guys!",
             image: "http://sis.smu.edu.sg/sites/default/files/sis/students/BSc-ISM/2013/lee_chian_yee.jpg",
-            interests: [],
-            flips: 12, //num of people that flipped the card
+            interests: ['badminton','baking','cooking'],
+            views: 12, //num of people that flipped the card
             flowers: [
                 {
                     flower: "Rose",
@@ -19,18 +20,22 @@ var Data = {
         {
             name: "Jesper",
             age: 24,
-            sex: "M",
-            status: "Attached",
+            sex: "male",
+            status: "red",
+            views: 2,
+            displayMessage: "I'm sexy and i know it!",
             image: "http://sis.smu.edu.sg/sites/default/files/sis/students/BSc-ISM/2013/lee_chian_yee.jpg",
-            interests: []
+            interests: ['basketball','sports']
         },
         {
             name: "Wei Jie",
             age: 24,
-            sex: "M",
-            status: "Attached",
+            sex: "male",
+            status: "orange",
+            views: 0,
+            displayMessage: "I eat well",
             image: "http://sis.smu.edu.sg/sites/default/files/sis/students/BSc-ISM/2013/lee_chian_yee.jpg",
-            interests: []
+            interests: ['eating']
         }
     ]
 };
@@ -42,34 +47,16 @@ var App = {
     loadPeople: function () {
         var $peopleList = $('#people-list');
         Data.people.forEach(function (p) {
-            var template = '<div class="column">\
-            <div class="ui fluid card">\
-                <div class="image">\
-                <img src="{{image}}">\
-                </div>\
-                <div class="content">\
-                <div class="header">{{name}}</div>\
-            <div class="meta">\
-                <a>Friends</a>\
-                </div>\
-                <div class="description">\
-                Matthew is an interior designer living in New York.\
-            </div>\
-            </div>\
-            <div class="extra content">\
-                <span class="right floated">\
-                Joined in 2013\
-                </span>\
-                <span>\
-                <i class="user icon"></i>\
-                75 Friends\
-            </span>\
-            </div>\
-            </div>\
-            </div>';
+            var template = $('#people-list-template').html();
 
             $peopleList.append(Mustache.render(template,p));
-        })
+            $peopleList.append(Mustache.render(template,p));
+            $peopleList.append(Mustache.render(template,p));
+            $peopleList.append(Mustache.render(template,p));
+        });
+        $('.special.cards .image').dimmer({
+            on: 'hover'
+        });
     }
 };
 
