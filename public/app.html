@@ -41,7 +41,7 @@
     <div class="right-panel">
         <div id="people-list" class="ui special cards">
             <script id="people-list-template" type="template">
-                <div class="ui card" style="max-width: 15em">
+                <div class="ui card" style="max-width: 15em" data-id="{{id}}">
                     <div class="extra content">
                         <div class="header">{{name}}</div>
                         <div class="meta">
@@ -52,21 +52,12 @@
                         <div class="ui inverted dimmer">
                             <div class="content">
                                 <div class="center">
-                                    <div class="ui button blue" style="margin-bottom: 1em">Check compatibility</div>
-                                    <div class="ui button pink">Send Gift</div>
+                                    <div class="ui button blue btn-check" style="margin-bottom: 1em">Check compatibility</div>
+                                    <div class="ui button pink btn-gift"><i class="gift icon"></i>Send Gift</div>
                                 </div>
                             </div>
                         </div>
                         <img class="square-crop" src="{{image}}">
-                    </div>
-                    <div class="content">
-                        <div class="description">
-                            <div class="ui celled horizontal list center aligned">
-                                {{#interests}}
-                                <div class="item"><a>{{.}}</a></div>
-                                {{/interests}}
-                            </div>
-                        </div>
                     </div>
                     <div class="extra content center aligned">
                         <span>

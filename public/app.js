@@ -1,6 +1,7 @@
 var Data = {
     people: [
         {
+            id: 1,
             name: "Ivy",
             age: 21,
             sex: "female",
@@ -18,6 +19,7 @@ var Data = {
             ]
         },
         {
+            id: 2,
             name: "Jesper",
             age: 24,
             sex: "male",
@@ -28,6 +30,7 @@ var Data = {
             interests: ['basketball','sports']
         },
         {
+            id: 3,
             name: "Wei Jie",
             age: 24,
             sex: "male",
@@ -42,7 +45,21 @@ var Data = {
 
 var App = {
     init: function () {
+        App.bindEvents();
         App.loadPeople();
+    },
+    bindEvents: function () {
+        var $peopleList = $('#people-list');
+
+        //check compatibility button
+        $peopleList.on('click', '.btn-check', function () {
+            var id = $(this).parents('.ui.card').data("id");
+        });
+
+        //send gift button
+        $peopleList.on('click', '.btn-check', function () {
+            var id = $(this).parents('.ui.card').data("id");
+        });
     },
     loadPeople: function () {
         var $peopleList = $('#people-list');
@@ -54,9 +71,13 @@ var App = {
             $peopleList.append(Mustache.render(template,p));
             $peopleList.append(Mustache.render(template,p));
         });
+        //init dimmer
         $('.special.cards .image').dimmer({
             on: 'hover'
         });
+    },
+    checkCompatibility: function (id) {
+
     }
 };
 
