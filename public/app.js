@@ -1,4 +1,14 @@
 var Data = {
+    self: {
+        name: "Clarence",
+        age: 22,
+        sex: "male",
+        status: "red",
+        views: 2,
+        displayMessage: "Single and available",
+        image: "images/avatar.jpg",
+        interests: ['basketball','sports']
+    },
     people: [
         {
             id: 1,
@@ -46,6 +56,7 @@ var Data = {
 var App = {
     init: function () {
         App.bindEvents();
+        App.loadProfile();
         App.loadPeople();
     },
     bindEvents: function () {
@@ -60,6 +71,10 @@ var App = {
         $peopleList.on('click', '.btn-check', function () {
             var id = $(this).parents('.ui.card').data("id");
         });
+    },
+    loadProfile: function () {
+        var template = $('#profile-template').html();
+        $('#profile').html(Mustache.render(template, Data.self));
     },
     loadPeople: function () {
         var $peopleList = $('#people-list');
