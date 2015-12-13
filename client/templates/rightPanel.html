@@ -1,0 +1,33 @@
+<template name="rightPanel">
+    <div class="right-panel">
+        <div id="people-list" class="ui special cards">
+            <script id="people-list-template" type="template">
+                <div class="ui card" style="max-width: 15em" data-id="{{id}}">
+                    <div class="extra content">
+                        <div class="header">{{name}}</div>
+                        <div class="meta">
+                            <i class="{{sex}} icon {{status}}"></i> {{displayMessage}}
+                        </div>
+                    </div>
+                    <div class="blurring dimmable image">
+                        <div class="ui inverted dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui button blue btn-check" style="margin-bottom: 1em">Check compatibility</div>
+                                    <div class="ui button pink btn-gift"><i class="gift icon"></i>Send Gift</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="square-crop" src="{{image}}">
+                    </div>
+                    <div class="extra content center aligned">
+                        <span>
+                            <i class="user icon"></i>
+                            {{views}} views
+                        </span>
+                    </div>
+                </div>
+            </script>
+        </div>
+    </div>
+</template>

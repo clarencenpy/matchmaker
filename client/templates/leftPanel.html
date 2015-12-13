@@ -1,0 +1,41 @@
+<template name="leftPanel">
+    <div class="left-panel">
+        <!--Profile-->
+        <div id="profile"></div>
+        <script id="profile-template" type="template">
+            <div class="ui fluid centered card" style="max-width: 25em;">
+                <div class="content">
+                    <div class="header">
+                        {{name}}
+                    </div>
+                    <div class="meta">
+                        <i class="{{sex}} icon {{status}}"></i> {{displayMessage}}
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="{{image}}">
+                </div>
+                <div class="content">
+                    <h5 class="ui horizontal divider">
+                        Interests
+                    </h5>
+                    <div class="description">
+                        <div class="ui horizontal bulleted list">
+                            {{#each interests}}
+                                <a class="item">{{.}}</a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <div class="ui green button"><i class="edit icon"></i>Edit Profile</div>
+                        <div class="ui red button"><i class="sign out icon"></i>Logout</div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+    </div>
+</template>

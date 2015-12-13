@@ -1,0 +1,34 @@
+.view {
+    width: 100%;
+}
+.left-panel {
+    width: 25em;
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    background-color: darkred;
+    padding: 1em;
+}
+.right-panel {
+    width: 100%;
+    padding: 2em 2em 2em 27em;
+    height: 100vh;
+    background-color: lightpink;
+    overflow-y: scroll;
+}
+@media only screen and (max-width: 768px) {
+    .left {
+        width: 100%;
+        position: relative;
+        height: 40em;
+    }
+    .right {
+        padding: 2em;
+    }
+}
+.square-crop {
+    object-fit: cover;
+    object-position: 90%;
+    height: 15em !important;
+    width: 15em !important;
+}
