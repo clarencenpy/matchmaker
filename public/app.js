@@ -7,7 +7,7 @@ var Data = {
         views: 2,
         displayMessage: "Single and available",
         image: "images/avatar.jpg",
-        interests: ['basketball','sports']
+        interests: ['basketball', 'sports']
     },
     people: [
         {
@@ -18,7 +18,7 @@ var Data = {
             status: "green",
             displayMessage: "I like hot guys!",
             image: "http://sis.smu.edu.sg/sites/default/files/sis/students/BSc-ISM/2013/lee_chian_yee.jpg",
-            interests: ['badminton','baking','cooking'],
+            interests: ['badminton', 'baking', 'cooking'],
             views: 12, //num of people that flipped the card
             likes: 0,
             flowers: [
@@ -85,10 +85,10 @@ var App = {
         Data.people.forEach(function (p) {
             var template = $('#people-list-template').html();
 
-            $peopleList.append(Mustache.render(template,p));
-            $peopleList.append(Mustache.render(template,p));
-            $peopleList.append(Mustache.render(template,p));
-            $peopleList.append(Mustache.render(template,p));
+            $peopleList.append(Mustache.render(template, p));
+            $peopleList.append(Mustache.render(template, p));
+            $peopleList.append(Mustache.render(template, p));
+            $peopleList.append(Mustache.render(template, p));
         });
         //init dimmer
         $('.special.cards .image').dimmer({
@@ -97,12 +97,14 @@ var App = {
     },
     checkCompatibility: function (id) {
 
+        App.incrementViews(id);
+
         //inject template then show the modal
         var template = $('#compare-template').html();
-        
+
         //retrieve the user to compare to
         var other = _.find(Data.people, function (p) {
-           return p.id === id;
+            return p.id === id;
         });
 
         var data = {};
@@ -126,6 +128,18 @@ var App = {
         //init progress bars
         $('#interest-progress').progress();
         $('#astrology-progress').progress();
+    },
+    incrementLikes: function (id) {
+        var p = _.find(Data.people, function (p) {
+            return p.id === id;
+        });
+        p.likes++;
+    },
+    incrementViews: function (id) {
+        var p = _.find(Data.people, function (p) {
+            return p.id === id;
+        });
+        p.views++;
     }
 };
 
