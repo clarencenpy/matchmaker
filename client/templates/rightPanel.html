@@ -1,6 +1,7 @@
 <template name="rightPanel">
     <div class="right-panel">
         <div class="ui special cards">
+            {{#each people}}
             <div class="ui card" style="max-width: 15em" data-id="{{id}}">
                 <div class="extra content">
                     <div class="header">{{name}}</div>
@@ -27,6 +28,7 @@
                     </span>
                 </div>
             </div>
+            {{/each}}
         </div>
     </div>
 </template>

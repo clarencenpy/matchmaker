@@ -4,14 +4,14 @@
         <div class="ui fluid centered card" style="max-width: 25em;">
             <div class="content">
                 <div class="header">
-                    {{name}}
+                    {{self.name}}
                 </div>
                 <div class="meta">
-                    <i class="{{sex}} icon {{status}}"></i> {{displayMessage}}
+                    <i class="{{self.sex}} icon {{self.status}}"></i> {{self.displayMessage}}
                 </div>
             </div>
             <div class="image">
-                <img src="{{image}}">
+                <img src="{{self.image}}">
             </div>
             <div class="content">
                 <h5 class="ui horizontal divider">
@@ -20,7 +20,7 @@
 
                 <div class="description">
                     <div class="ui horizontal bulleted list">
-                        {{#each interests}}
+                        {{#each self.interests}}
                             <a class="item">{{.}}</a>
                         {{/each}}
                     </div>
