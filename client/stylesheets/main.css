@@ -7,7 +7,17 @@
     left: 0;
     height: 100vh;
     background-color: darkred;
-    padding: 1em;
+    padding: 3em 1em 1em 1rem;
+}
+.left-panel-top {
+    position: absolute;
+    width: 25em;
+    height: 3em;
+    left: 0;
+    top: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: whitesmoke;
 }
 .right-panel {
     width: 100%;
@@ -31,4 +41,11 @@
     object-position: 90%;
     height: 15em !important;
     width: 15em !important;
+}
+.login {
+    font-weight: bold;
+    color: black;
+}
+.login .menu > .item {
+    width: 20em;
 }

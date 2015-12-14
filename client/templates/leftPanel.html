@@ -1,5 +1,11 @@
 <template name="leftPanel">
     <div class="left-panel">
+
+        <div class="left-panel-top">
+            <i class="user icon"></i>
+            {{> loginButtons }}
+        </div>
+
         <!--Profile-->
         <div class="ui fluid centered card" style="max-width: 25em;">
             <div class="content">
@@ -30,7 +36,7 @@
             <div class="extra content">
                 <div class="ui two buttons">
                     <div class="ui green button"><i class="edit icon"></i>Edit Profile</div>
-                    <div class="ui red button"><i class="sign out icon"></i>Logout</div>
+                    <div class="ui red button"><i class="trash icon"></i>Delete</div>
                 </div>
             </div>
         </div>
