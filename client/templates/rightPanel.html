@@ -31,4 +31,41 @@
             {{/each}}
         </div>
     </div>
+
+    <!--Modals-->
+    <div id="compare-modal" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header ui center aligned">
+            Compatibility Check
+        </div>
+        <div class="image content">
+            <div class="ui medium circular image">
+                <img src="{{compare.self.image}}">
+            </div>
+            <div class="description" style="padding-right: 2em; width: 50em;">
+                <div id="interest-progress" class="ui indicating progress">
+                    <div class="bar"></div>
+                    <div class="label">Interests: {{compare.interestPercent}}% match</div>
+                </div>
+                <div id="astrology-progress" class="ui indicating progress">
+                    <div class="bar"></div>
+                    <div class="label">Astrology: {{compare.astrologyPercent}}% match</div>
+                </div>
+            </div>
+            <div class="ui medium circular image float right">
+                <img src="{{compare.other.image}}">
+            </div>
+        </div>
+
+        <div class="actions ui centered grid">
+            <div class="ui black deny button">
+                Nope
+            </div>
+            <div class="ui pink right labeled icon button" data-id="{{compare.other.id}}">
+                I'm interested!
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+
 </template>
