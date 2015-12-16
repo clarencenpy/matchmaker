@@ -3,11 +3,11 @@
         {{#if currentUser}}
         <div class="ui special cards">
             {{#each people}}
-            <div class="ui card" style="max-width: 15em" data-id="{{id}}">
+            <div class="ui card" style="max-width: 15em">
                 <div class="extra content">
-                    <div class="header">{{name}}</div>
+                    <div class="header">{{profile.name}}</div>
                     <div class="meta">
-                        <i class="{{sex}} icon {{status}}"></i> {{displayMessage}}
+                        <i class="{{profile.gender}} icon {{profile.status}}"></i> {{profile.displayMessage}}
                     </div>
                 </div>
                 <div class="blurring dimmable image">
@@ -20,12 +20,12 @@
                             </div>
                         </div>
                     </div>
-                    <img class="square-crop" src="{{image}}">
+                    <img class="square-crop" src="{{profile.image}}">
                 </div>
                 <div class="extra content center aligned">
                     <span>
                         <i class="user icon"></i>
-                        {{views}} views
+                        {{profile.views}} views
                     </span>
                 </div>
             </div>
@@ -42,9 +42,9 @@
         </div>
         <div class="image content">
             <div class="ui medium circular image">
-                <img src="{{compare.self.image}}">
+                <img src="{{compare.self.image}}" class="square-crop">
             </div>
-            <div class="description" style="padding-right: 2em; width: 50em;">
+            <div class="description" style="padding-right: 2em; width: 60%;">
                 <div id="interest-progress" class="ui indicating progress">
                     <div class="bar"></div>
                     <div class="label">Interests: {{compare.interestPercent}}% match</div>
@@ -53,9 +53,10 @@
                     <div class="bar"></div>
                     <div class="label">Astrology: {{compare.astrologyPercent}}% match</div>
                 </div>
+                <p>{{compare.advice}}</p>
             </div>
             <div class="ui medium circular image float right">
-                <img src="{{compare.other.image}}">
+                <img src="{{compare.other.image}}" class="square-crop">
             </div>
         </div>
 
