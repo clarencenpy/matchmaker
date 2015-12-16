@@ -1,5 +1,6 @@
 <template name="rightPanel">
     <div class="right-panel">
+        {{#if currentUser}}
         <div class="ui special cards">
             {{#each people}}
             <div class="ui card" style="max-width: 15em" data-id="{{id}}">
@@ -30,6 +31,7 @@
             </div>
             {{/each}}
         </div>
+        {{/if}}
     </div>
 
     <!--Modals-->

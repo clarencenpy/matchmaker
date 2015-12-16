@@ -1,0 +1,77 @@
+<template name="addProfileModal">
+    <div id="profile-modal" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header ui center aligned">
+            Edit Profile
+        </div>
+        <div class="content">
+            <div id="profile-form" class="ui form">
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="field">
+                    <label>Display Message</label>
+                    <input type="text" name="displayMessage">
+                </div>
+                <div class="field">
+                    <label>Image URL</label>
+                    <input type="text" name="image">
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Gender</label>
+                        <select class="ui dropdown" name="gender">
+                            <option value="">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Status</label>
+                        <select class="ui dropdown" name="status">
+                            <option value="">Status</option>
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                            <option value="orange">Orange</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="three fields">
+                    <div class="field">
+                        <label>Day of birth</label>
+                        <input type="number" name="day">
+                    </div>
+                    <div class="field">
+                        <label>Month of birth</label>
+                        <input type="number" name="month">
+                    </div>
+                    <div class="field">
+                        <label>Year of birth</label>
+                        <input type="number" name="year">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Interests</label>
+                    <select class="ui fluid search dropdown" multiple>
+                        <option value="running">Running</option>
+                        <option value="music">Music</option>
+                        <option value="cooking">Cooking</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="actions ui centered grid">
+            <div class="ui black deny button">
+                Cancel
+            </div>
+            <div class="ui pink right labeled icon approve button">
+                Submit
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+</template>

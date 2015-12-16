@@ -7,6 +7,7 @@
         </div>
 
         <!--Profile-->
+        {{#if currentUser}}
         <div class="ui fluid centered card" style="max-width: 25em;">
             <div class="content">
                 <div class="header">
@@ -35,11 +36,26 @@
 
             <div class="extra content">
                 <div class="ui two buttons">
-                    <div class="ui green button"><i class="edit icon"></i>Edit Profile</div>
-                    <div class="ui red button"><i class="trash icon"></i>Delete</div>
+                    <div class="btn-edit ui green button"><i class="edit icon"></i>Edit Profile</div>
+                    <div class="btn-delete ui red button"><i class="trash icon"></i>Delete</div>
                 </div>
             </div>
         </div>
+        {{else}}
+            <div class="ui icon message">
+                <i class="heart icon pink"></i>
+                <div class="content">
+                    <div class="header">
+                        Welcome to SMUching!
+                    </div>
+                    <p>Sign in to view other profiles and start matching!</p>
+                </div>
+            </div>
+        {{/if}}
 
     </div>
+    {{#if currentUser}}
+        {{>addProfileModal}}
+    {{/if}}
+
 </template>
