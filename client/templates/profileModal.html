@@ -1,4 +1,4 @@
-<template name="addProfileModal">
+<template name="profileModal">
     <div id="profile-modal" class="ui modal">
         <i class="close icon"></i>
         <div class="header ui center aligned">
@@ -8,56 +8,56 @@
             <div id="profile-form" class="ui form">
                 <div class="field">
                     <label>Name</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="{{self.name}}">
                 </div>
                 <div class="field">
                     <label>Display Message</label>
-                    <input type="text" name="displayMessage">
+                    <input type="text" name="displayMessage" value="{{self.displayMessage}}">
                 </div>
                 <div class="field">
                     <label>Image URL</label>
-                    <input type="text" name="image">
+                    <input type="text" name="image" value="{{self.image}}">
                 </div>
                 <div class="two fields">
                     <div class="field">
                         <label>Gender</label>
                         <select class="ui dropdown" name="gender">
                             <option value="">Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="male" selected="{{#if equals self.gender "male"}}true{{/if}}">Male</option>
+                            <option value="female" selected="{{#if equals self.gender "female"}}true{{/if}}">Female</option>
                         </select>
                     </div>
                     <div class="field">
                         <label>Status</label>
                         <select class="ui dropdown" name="status">
                             <option value="">Status</option>
-                            <option value="red">Red</option>
-                            <option value="green">Green</option>
-                            <option value="orange">Orange</option>
+                            <option value="red" selected="{{#if equals self.status "red"}}true{{/if}}">Red</option>
+                            <option value="green" selected="{{#if equals self.status "green"}}true{{/if}}">Green</option>
+                            <option value="orange" selected="{{#if equals self.status "orange"}}true{{/if}}">Orange</option>
                         </select>
                     </div>
                 </div>
                 <div class="three fields">
                     <div class="field">
                         <label>Day of birth</label>
-                        <input type="number" name="day">
+                        <input type="number" name="day" value="{{self.day}}">
                     </div>
                     <div class="field">
                         <label>Month of birth</label>
-                        <input type="number" name="month">
+                        <input type="number" name="month" value="{{self.month}}">
                     </div>
                     <div class="field">
                         <label>Year of birth</label>
-                        <input type="number" name="year">
+                        <input type="number" name="year" value="{{self.year}}">
                     </div>
                 </div>
                 <div class="field">
                     <label>Interests</label>
-                    <select class="ui fluid search dropdown" multiple>
-                        <option value="running">Running</option>
-                        <option value="music">Music</option>
-                        <option value="cooking">Cooking</option>
-                        <option value="sports">Sports</option>
+                    <select class="ui fluid search dropdown" name="interests" multiple>
+                        <option value="running" selected="{{#if contains self.interests "running"}}true{{/if}}">Running</option>
+                        <option value="music" selected="{{#if contains self.interests "music"}}true{{/if}}">Music</option>
+                        <option value="cooking" selected="{{#if contains self.interests "cooking"}}true{{/if}}">Cooking</option>
+                        <option value="sports" selected="{{#if contains self.interests "sports"}}true{{/if}}">Sports</option>
                     </select>
                 </div>
                 <br>

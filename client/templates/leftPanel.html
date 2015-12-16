@@ -14,7 +14,7 @@
                     {{self.name}}
                 </div>
                 <div class="meta">
-                    <i class="{{self.sex}} icon {{self.status}}"></i> {{self.displayMessage}}
+                    <i class="{{self.gender}} icon {{self.status}}"></i> {{self.displayMessage}}
                 </div>
             </div>
             <div class="image">
@@ -55,7 +55,7 @@
 
     </div>
     {{#if currentUser}}
-        {{>addProfileModal}}
+        {{>profileModal}}
     {{/if}}
 
 </template>

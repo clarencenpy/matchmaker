@@ -1,6 +1,6 @@
 Template.leftPanel.helpers({
     self: function () {
-        return Data.self;
+        return Meteor.user().profile;
     }
 });
 
@@ -19,6 +19,7 @@ Template.leftPanel.events({
                 p.day = $form.find('[name=day]').val();
                 p.month = $form.find('[name=month]').val();
                 p.year = $form.find('[name=year]').val();
+                p.interests = $form.find('[name=interests]').val();
 
                 Meteor.users.update(Meteor.userId(), {$set: {profile: p}});
             }
